@@ -1,9 +1,13 @@
 import Header from '@/components/Header/Header'
 import React from 'react'
+import IssuesList from '../components/IssuesList'
 
 function Profile() {
   return (
-    <Header />
+    <div>
+      <Header />
+      <IssuesList />
+    </div>
   )
 }
 
