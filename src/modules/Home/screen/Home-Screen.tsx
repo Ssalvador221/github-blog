@@ -1,8 +1,8 @@
-import Header from '@/components/Header/Header'
 import React from 'react'
 import IssuesList from '../components/IssuesList'
+import Header from '@/components/Header/Header'
 
-function Profile() {
+function HomeScreen() {
   return (
     <div>
       <Header />
@@ -11,4 +11,4 @@ function Profile() {
   )
 }
 
-export default Profile
+export default HomeScreen

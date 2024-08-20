@@ -1,7 +1,7 @@
-import Profile from "@/modules/profile/screen/Profile";
+import HomeScreen from "@/modules/Home/screen/Home-Screen";
 
 export default function Home() {
   return (
-   <Profile />
+   <HomeScreen />
   )
 }

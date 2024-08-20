@@ -1,4 +1,5 @@
 import { BackpackIcon, ExternalLinkIcon, GitHubLogoIcon, PersonIcon } from '@radix-ui/react-icons'
+import Link from 'next/link'
 import React from 'react'
 
 type CardProps = {
@@ -21,7 +22,7 @@ function Card({ name, githubUrl, tags, bio, avatar_url }: CardProps) {
             <div className='infos w-full text-white flex flex-col gap-1 p-3'>
                 <div className='title w-full flex flex-row justify-between items-center'>
                     <h1 className='text-lg font-bold'>{name}</h1>
-                    <a href={githubUrl} className='flex flex-row items-center gap-1 text-sm text-[#1e57c0] font-bold'>Github <ExternalLinkIcon /></a>
+                    <Link href={`${githubUrl}`} className='flex flex-row items-center gap-1 text-sm text-[#1e57c0] font-bold'>Github <ExternalLinkIcon /></Link>
                 </div>
                 <p>{bio}</p>  
                 <div className='tags flex flex-row gap-2'>

@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Card from '../Card/CardProfile'
-import { usersApi } from '@/lib/axios/api'
+import { api } from '@/lib/axios/api'
 import { GithubUser } from '@/types/types'
 
 function Header() {
@@ -10,7 +10,7 @@ function Header() {
   useEffect(() =>  {
     const fetchData = async () => {
     try {
-      const response = await usersApi.get("ssalvador221")
+      const response = await api.get("users/ssalvador221")
       setUser(response.data)
     } catch (error) {
       console.log(error)
