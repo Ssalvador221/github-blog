@@ -1,12 +1,12 @@
 "use client"
 
 type IssueCardProps = {
-  title: string;
-  content: string;
-  date: string;
+  title?: string;
+  body?: string;
+  date?: string;
 }
 
-function IssueCards({ title, content, date }: IssueCardProps) {
+function IssueCards({ title, body, date }: IssueCardProps) {
   return (
     <div className='w-[420px] h-[250px] rounded-md bg-[#122946]'>
       <div className="title w-full h-[70px] flex flex-row items-center px-4 pt-4 text-white ">
@@ -15,7 +15,7 @@ function IssueCards({ title, content, date }: IssueCardProps) {
       </div>
       <div className="content">
         {/* TODO: ADD CONTENT PROPS */}
-        <p className="text-[14px] p-4 text-[#a0a0a0]">{content}</p>
+        <p className="text-[14px] p-4 text-[#a0a0a0]">{body}</p>
       </div>
     </div>
   )

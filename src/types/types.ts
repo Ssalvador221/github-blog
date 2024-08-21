@@ -8,3 +8,13 @@ export interface GithubUser {
   html_url: string
   followers: number
 }
+
+
+export interface Issue {
+  id: number
+  title: string
+  body: string
+  url: string
+  created_at: string
+  user: GithubUser
+}
