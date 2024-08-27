@@ -11,10 +11,12 @@ export interface GithubUser {
 
 
 export interface Issue {
-  id: number
-  title: string
-  body: string
-  url: string
-  created_at: string
-  user: GithubUser
+  items: [{
+    id: number
+    title: string
+    body: string
+    url: string
+    created_at: string
+    user: GithubUser
+  }]
 }

@@ -21,8 +21,8 @@ function Header() {
 
 
   return (
-    <div className='w-full flex justify-center bg-[#0d1d32]'>
-        <div className='mt-44' key={user?.id}>
+    <div className='w-full flex justify-center bg-[#161b22]'>
+        <div className='mt-28' key={user?.id}>
             <Card bio={user?.bio} name={user?.name} githubUrl={user?.html_url} avatar_url={user?.avatar_url} tags={[{ username: user?.login, followers: user?.followers, company: user?.company }]} />
         </div>
     </div>

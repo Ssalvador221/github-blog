@@ -13,21 +13,24 @@ function IssuesList() {
   const [issue, setIssues] = useState<Issue>()
 
   useEffect(() =>  {
-    api.get("/repos/Ssalvador221/github-blog/issues/1").then((response) => {
+    api.get("search/issues?q=bug").then((response) => {
       setIssues(response.data)
     })
   }, [])
 
 
-  const date = dayjs(issue?.created_at)
+  const date = dayjs(issue?.items[0].created_at)
 
   
   
   return (
-    <div className='flex justify-center w-full h-screen gap-7 mt-14'>
+    <div className='flex flex-wrap justify-center w-full h-screen gap-7 mt-14'>
+      {issue?.items.map((item, index) => {
+        return (
+          <IssueCards title={item.title} body={item.body} date={date.fromNow()} key={index} />
+        )
+      })}
 
-      <IssueCards title={issue?.title} body={issue?.body} date={date.fromNow()} />
-      
     </div>
   )
 }
