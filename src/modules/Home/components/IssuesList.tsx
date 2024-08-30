@@ -1,5 +1,5 @@
 "use client"
-import { Issue } from '@/types/types'
+import { IIssue } from '@/types/types'
 import { useEffect, useState } from 'react'
 import IssueCards from './Issue-Cards'
 import { api } from '@/lib/axios/api'
@@ -10,26 +10,26 @@ import 'dayjs/locale/pt-br'
 dayjs.extend(relativeTime)
 dayjs.locale('pt-br')
 function IssuesList() {
-  const [issue, setIssues] = useState<Issue>()
+  const [issue, setIssues] = useState<IIssue[]>([])
 
   useEffect(() =>  {
-    api.get("search/issues?q=bug").then((response) => {
+    api.get("repos/Ssalvador221/github-blog/issues").then((response) => {
       setIssues(response.data)
     })
   }, [])
 
 
-  const date = dayjs(issue?.items[0].created_at)
+  const date = dayjs(issue[0]?.created_at)
 
   
   
   return (
     <div className='flex flex-wrap justify-center w-full h-screen gap-7 mt-14'>
-      {issue?.items.map((item, index) => {
+      {issue?.map((item, index) => {
         return (
-          <IssueCards title={item.title} body={item.body} date={date.fromNow()} key={index} />
+          <IssueCards issueNumber={item.number} title={item.title} body={item.body} date={date.fromNow()} key={index} />
         )
-      })}
+      })} 
 
     </div>
   )

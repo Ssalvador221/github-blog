@@ -10,13 +10,13 @@ export interface GithubUser {
 }
 
 
-export interface Issue {
-  items: [{
+export interface IIssue {
     id: number
     title: string
     body: string
     url: string
     created_at: string
+    number: number
+    comments: number
     user: GithubUser
-  }]
 }
