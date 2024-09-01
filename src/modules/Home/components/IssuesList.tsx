@@ -21,13 +21,14 @@ function IssuesList() {
   const date = dayjs(issue[0]?.created_at)
 
   return (
-    <div className='flex flex-wrap justify-center w-full h-screen gap-7 mt-14'>
+    <div className='w-full h-screen mt-14'>
+      <div className='flex flex-wrap justify-center gap-4 p-6'>
       {issue?.map((item, index) => {
         return (
           <IssueCards issueNumber={item.number} title={item.title} body={item.body} date={date.fromNow()} key={index} />
         )
       })} 
-
+      </div>
     </div>
   )
 }
