@@ -1,3 +1,4 @@
+import { Inter } from 'next/font/google'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
@@ -5,11 +6,14 @@ type IssueProps = {
   content?: string
   setContent?: React.Dispatch<React.SetStateAction<string>>
 }
+
+const inter = Inter({ subsets: ["latin"] });
+
 function IssueContent({ content, setContent }: IssueProps) {
   return (
-    <div className='flex justify-center w-full h-full '>
+    <div className='flex justify-center w-full h-full'>
       <div className='w-[750px] h-[600px] bg-[#1e252f] rounded-md'>
-        <ReactMarkdown className='w-full h-full p-5 text-white'>{content}</ReactMarkdown>
+        <ReactMarkdown className={`${inter.className} flex flex-col gap-2 p-6 w-full h-full text-white react-markdown`}>{content}</ReactMarkdown>
       </div>  
     </div>
   )

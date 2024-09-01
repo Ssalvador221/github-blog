@@ -9,7 +9,6 @@ export interface GithubUser {
   followers: number
 }
 
-
 export interface IIssue {
     id: number
     title: string

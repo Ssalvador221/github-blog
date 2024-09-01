@@ -18,11 +18,8 @@ function IssuesList() {
     })
   }, [])
 
-
   const date = dayjs(issue[0]?.created_at)
 
-  
-  
   return (
     <div className='flex flex-wrap justify-center w-full h-screen gap-7 mt-14'>
       {issue?.map((item, index) => {

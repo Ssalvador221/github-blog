@@ -1,0 +1,32 @@
+.react-markdown h3 {
+  font-size: 18.72px;
+  font-weight: 600;
+  color: white
+}
+
+.react-markdown h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: white
+}
+
+.react-markdown p {
+  color: white;
+  padding: 2px;
+  margin-left: 30px;
+  font-size: 14px;
+}
+
+.react-markdown ul li {
+  list-style-type: disc;
+  color: white;
+  padding: 2px;
+  margin-left: 40px
+}
+
+.react-markdown ol li {
+  list-style-type: decimal;
+  color: white;
+  padding: 2px;
+  margin-left: 40px
+}
